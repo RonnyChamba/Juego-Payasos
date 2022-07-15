@@ -32,6 +32,7 @@
 
             <ImageView
                 android:id="@+id/imageView2"
+                android:layout_marginTop="5dp"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 app:srcCompat="@drawable/icono_app" />
@@ -39,36 +40,55 @@
 
 
 
-
-        <EditText
-            android:id="@+id/txtCorreo"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
-            android:layout_marginBottom="@dimen/mg_tb"
-            android:hint="@string/txtEmail"/>
+            android:layout_marginBottom="@dimen/mg_tb">
+
+            <EditText
+                android:id="@+id/txtCorreo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:background="@color/white"
+                android:hint="@string/txtEmail"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
 
 
-        <EditText
-            android:id="@+id/txtPassword"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/mg_tb"
-            android:inputType="textPassword"
-            android:hint="@string/txtPassword"/>
+            android:layout_marginBottom="@dimen/mg_tb">
+
+            <EditText
+                android:id="@+id/txtPassword"
+                android:background="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:hint="@string/txtPassword"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
 
-        <EditText
-            android:id="@+id/txtNombre"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/mg_tb"
-            android:hint="@string/txtNombre"/>
+            android:layout_marginBottom="@dimen/mg_tb">
+
+            <EditText
+                android:id="@+id/txtNombre"
+                android:background="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/txtNombre"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
             android:id="@+id/txtFecha"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:layout_marginBottom="@dimen/mg_tb"
             android:textAlignment="center"
             android:textSize="16dp"
@@ -84,8 +104,5 @@
             android:text="@string/btnRegistrar"
             android:backgroundTint="@color/color_botones"/>
     </LinearLayout>
-
-
-
 
 </RelativeLayout>
