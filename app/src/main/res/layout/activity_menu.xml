@@ -47,6 +47,12 @@
                 android:layout_marginBottom="@dimen/mg_tb"
                 app:srcCompat="@drawable/icono_app" />
             <TextView
+                android:id="@+id/txtUidMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:visibility="invisible"/>
+            <TextView
                 android:id="@+id/txtCorreoMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

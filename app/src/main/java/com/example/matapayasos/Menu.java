@@ -30,6 +30,7 @@ public class Menu extends AppCompatActivity {
     Button btnCerrarSesion;
 
     TextView txtTituloMenu;
+    TextView txtUidJugadorMenu;
     TextView txtZombieMenu;
     TextView txtSubTituloMenu;
     TextView txtCorreoJugadorMenu;
@@ -44,6 +45,7 @@ public class Menu extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
 
         txtTituloMenu = findViewById(R.id.txtTituloMenu);
+        txtUidJugadorMenu = findViewById(R.id.txtUidMenu);
         txtSubTituloMenu = findViewById(R.id.txtSubtituloBotones);
         txtCorreoJugadorMenu = findViewById(R.id.txtCorreoMenu);
         txtNombreJugadorMenu = findViewById(R.id.txtNombreMenu);
@@ -60,6 +62,22 @@ public class Menu extends AppCompatActivity {
         jugadores = database.getReference("MI DATA BASE JUGADORES");
 
         btnJugar.setOnClickListener((event) -> {
+
+
+            Intent intent = new Intent(Menu.this, EscenarioJuego.class);
+
+            String nombre = txtNombreJugadorMenu.getText() +"";
+            String uId = txtUidJugadorMenu.getText() +"";
+            String email = txtCorreoJugadorMenu.getText() +"";
+            String zombies = txtZombieMenu.getText() +"";
+
+            intent.putExtra("uId", uId);
+            intent.putExtra("nombres", nombre);
+            intent.putExtra("email", email);
+            intent.putExtra("zombie", zombies);
+            startActivity(intent);
+
+
         });
         btnPuntuacion.setOnClickListener((event) -> {
         });
@@ -120,11 +138,13 @@ public class Menu extends AppCompatActivity {
                 for (DataSnapshot ds : snapshot.getChildren()) {
 
                     String email = ds.child("Email").getValue() + "";
+                    String uId = ds.child("Uid").getValue() + "";
                     String nombres = ds.child("Nombres").getValue() + "";
                     String zombies = ds.child("Zombies").getValue() + "";
                     txtCorreoJugadorMenu.setText(email);
                     txtNombreJugadorMenu.setText(nombres);
                     txtZombieMenu.setText(zombies);
+                    txtUidJugadorMenu.setText(uId);
                 }
             }
 
