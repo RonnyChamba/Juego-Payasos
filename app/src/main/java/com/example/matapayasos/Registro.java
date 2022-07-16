@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.widget.Button;
@@ -36,10 +37,14 @@ public class Registro extends AppCompatActivity {
 
     FirebaseAuth auth;
 
+    TextView txtTitulo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
+
+        txtTitulo = findViewById(R.id.txtTituloRegistro);
 
         txtEmail = findViewById(R.id.txtCorreo);
         txtNombre = findViewById(R.id.txtNombre);
@@ -70,6 +75,15 @@ public class Registro extends AppCompatActivity {
                 registrarJugador(email, password);
             }
         });
+
+
+        Typeface typeface = Typeface.createFromAsset(Registro.this.getAssets(), "fuentes/zombie.TTF");
+        txtTitulo.setTypeface(typeface);
+        txtEmail.setTypeface(typeface);
+        txtPassword.setTypeface(typeface);
+        txtNombre.setTypeface(typeface);
+        txtFecha.setTypeface(typeface);
+        btnRegistrar.setTypeface(typeface);
 
     }
     private void registrarJugador(String email, String password){

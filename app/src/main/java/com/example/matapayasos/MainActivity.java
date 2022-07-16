@@ -3,6 +3,7 @@ package com.example.matapayasos;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.widget.Button;
 
@@ -30,6 +31,10 @@ public class MainActivity extends AppCompatActivity {
          });
 
 
+
+         Typeface typeface = Typeface.createFromAsset(MainActivity.this.getAssets(), "fuentes/zombie.TTF");
+         btnLogin.setTypeface(typeface);
+         btnRegistro.setTypeface(typeface);
 
      }
 

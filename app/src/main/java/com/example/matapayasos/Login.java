@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
@@ -19,11 +20,14 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import org.w3c.dom.Text;
+
 public class Login extends AppCompatActivity {
 
 
     EditText txtEmailLogin;
     EditText txtPassLogin;
+    TextView txtTituloLogin;
     Button btnLogin;
     FirebaseAuth auth;
 
@@ -32,9 +36,11 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        txtTituloLogin = findViewById(R.id.txtTituloLogin);
         txtEmailLogin = findViewById(R.id.emailLogin);
         txtPassLogin = findViewById(R.id.passLogin);
         btnLogin = findViewById(R.id.btnIngresarLogin);
+
 
         auth = FirebaseAuth.getInstance();
 
@@ -57,6 +63,12 @@ public class Login extends AppCompatActivity {
                 }
             }
         });
+
+        Typeface typeface = Typeface.createFromAsset(Login.this.getAssets(), "fuentes/zombie.TTF");
+        btnLogin.setTypeface(typeface);
+        txtEmailLogin.setTypeface(typeface);
+        txtPassLogin.setTypeface(typeface);
+        txtTituloLogin.setTypeface(typeface);
 
     }
 
