@@ -15,6 +15,9 @@ public class Menu extends AppCompatActivity {
 
      FirebaseAuth auth;
      FirebaseUser user;
+     Button btnJugar;
+     Button btnPuntuacion;
+     Button btnAcercaDe;
      Button btnCerrarSesion;
 
     @Override
@@ -22,10 +25,17 @@ public class Menu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
+        btnJugar = findViewById(R.id.btnJugar);
+        btnPuntuacion = findViewById(R.id.btnPuntaciones);
+        btnAcercaDe = findViewById(R.id.btnHacerca);
         btnCerrarSesion = findViewById(R.id.btnCerrarSesion);
 
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
+
+        btnJugar.setOnClickListener( (event)-> {});
+        btnPuntuacion.setOnClickListener( (event)-> {});
+        btnAcercaDe.setOnClickListener( (event)-> {});
 
         btnCerrarSesion.setOnClickListener( (event)-> cerrarSesion());
 

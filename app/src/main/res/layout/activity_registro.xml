@@ -102,7 +102,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/btnRegistrar"
-            android:backgroundTint="@color/color_botones"/>
+            android:background="@drawable/boton_personalizado"
+            app:backgroundTint ="@null"/>
     </LinearLayout>
 
 </RelativeLayout>
