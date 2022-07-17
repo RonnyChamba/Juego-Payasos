@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "651911962136",
-    "project_id": "proyecto-payasos",
-    "storage_bucket": "proyecto-payasos.appspot.com"
+    "project_number": "305168363839",
+    "project_id": "juego-payasos",
+    "storage_bucket": "juego-payasos.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:651911962136:android:2cfb2191305780bfe12d6d",
+        "mobilesdk_app_id": "1:305168363839:android:d442e705ca47a58c1b238a",
         "android_client_info": {
           "package_name": "com.example.matapayasos"
         }
       },
       "oauth_client": [
         {
-          "client_id": "651911962136-v4jiooutaps3om2o4air2vhcok6c0ikj.apps.googleusercontent.com",
+          "client_id": "305168363839-1bacs8c4fbl1ks79scksvloo3costg4n.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAD34daycA6jbo30rLJUt5jz1chZ9HYgms"
+          "current_key": "AIzaSyB9XU-0JhsIE1TOKi7JBUwBI9VJb4htXps"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "651911962136-v4jiooutaps3om2o4air2vhcok6c0ikj.apps.googleusercontent.com",
+              "client_id": "305168363839-1bacs8c4fbl1ks79scksvloo3costg4n.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
