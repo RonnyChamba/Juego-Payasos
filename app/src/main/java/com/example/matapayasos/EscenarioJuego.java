@@ -2,10 +2,12 @@ package com.example.matapayasos;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Point;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
+import android.view.Display;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -20,10 +22,9 @@ public class EscenarioJuego extends AppCompatActivity {
     TextView txtTiempo;
      ImageView imgZombie;
 
-    private Random random; // aleatorio
-    private int widthDisplay; // anchoPantalla
-    private int heightDisplay; // altoPantalla
-
+    private Random aleatorio;
+    private int anchoPantalla;
+    private int altoPantalla;
     int contador =0;
 
     @Override
@@ -35,30 +36,32 @@ public class EscenarioJuego extends AppCompatActivity {
         txtNombre = findViewById(R.id.txtNombreEs);
         txtTiempo = findViewById(R.id.txtTiempoEsc);
         imgZombie = findViewById(R.id.imgJuego);
-
         Bundle intent = getIntent().getExtras();
 
 
         uId = intent.getString("uId");
         nombre = intent.getString("nombres");
         email = intent.getString("email");
-         zombie= intent.getString("zombie");
+        zombie= intent.getString("zombie");
+
 
          txtNombre.setText(nombre);
          txtContador.setText(zombie);
 
+         pantalla();
          imgZombie.setOnClickListener((event)->{
              contador++;
-
              txtContador.setText(String.valueOf(contador));
              imgZombie.setImageResource(R.drawable.tumba);
 
              new Handler().postDelayed((  ()-> {
-             imgZombie.setImageResource(R.drawable.icono_app);
-            // moveZombie();
+                 movimiento();
+                 imgZombie.setImageResource(R.drawable.icono_app);
+
          }),500);
 
          } );
+
         Typeface typeface = Typeface.createFromAsset(EscenarioJuego.this.getAssets(), "fuentes/zombie.TTF");
 
         txtNombre.setTypeface(typeface);
@@ -82,5 +85,26 @@ public class EscenarioJuego extends AppCompatActivity {
 
             }
         }.start();
+    }
+
+    private void pantalla(){
+
+        Display display = getWindowManager().getDefaultDisplay();
+        Point point = new Point();
+        display.getSize(point);
+        altoPantalla = point.y;
+        anchoPantalla = point.x;
+        aleatorio = new Random();
+    }
+    private void movimiento(){
+
+        int min = 0;
+
+        int maxX = anchoPantalla - imgZombie.getWidth();
+        int maxY = anchoPantalla - imgZombie.getHeight();
+        int randomX = aleatorio.nextInt(    ((maxX - min) + 1) + min );
+        int randomY = aleatorio.nextInt(    ((maxY - min) + 1) + min );
+        imgZombie.setX(randomX);
+        imgZombie.setY(randomY);
     }
 }
