@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.view.Display;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -48,8 +49,7 @@ public class EscenarioJuego extends AppCompatActivity {
         nombre = intent.getString("nombres");
         email = intent.getString("email");
         zombie = intent.getString("zombie");
-
-
+        miDialog = new Dialog(EscenarioJuego.this);
         txtNombre.setText(nombre);
         txtContador.setText(zombie);
 
@@ -88,11 +88,41 @@ public class EscenarioJuego extends AppCompatActivity {
             public void onFinish() {
                 txtTiempo.setText("0s");
                 gameOver = true;
-
+                mensajeGameOver();
             }
         }.start();
     }
 
+    private void mensajeGameOver() {
+
+        Typeface typeface = Typeface.createFromAsset(EscenarioJuego.this.getAssets(), "fuentes/zombie.TTF");
+
+        TextView seAcaboTxt, hasMatadoTxt, numeroTxt;
+        Button jugarDeNuevo, irMenu, puntajes;
+
+        miDialog.setContentView(R.layout.gameover);
+        miDialog.setCancelable(false);
+
+        seAcaboTxt = miDialog.findViewById(R.id.seacaboTxt);
+        hasMatadoTxt = miDialog.findViewById(R.id.hasMatadoTxt);
+        numeroTxt = miDialog.findViewById(R.id.numeroTxt);
+
+        jugarDeNuevo = miDialog.findViewById(R.id.jugarDeNuevo);
+        irMenu = miDialog.findViewById(R.id.irMenu);
+        puntajes = miDialog.findViewById(R.id.puntajes);
+
+        String zombies = String.valueOf(contador);
+        numeroTxt.setText(zombies);
+
+        seAcaboTxt.setTypeface(typeface);
+        hasMatadoTxt.setTypeface(typeface);
+        numeroTxt.setTypeface(typeface);
+        jugarDeNuevo.setTypeface(typeface);
+        irMenu.setTypeface(typeface);
+        puntajes.setTypeface(typeface);
+        miDialog.show();
+
+    }
     private void pantalla() {
 
         Display display = getWindowManager().getDefaultDisplay();
