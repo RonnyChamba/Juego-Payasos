@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="20dp"
             android:gravity="center">
 
             <TextView
@@ -28,7 +28,7 @@
                 android:textSize="@dimen/sizeTitle"
                 android:textStyle="bold"
                 android:textColor="@color/color_botones"
-                android:layout_marginBottom="0dp"
+                android:layout_marginBottom="10dp"
                 android:textAlignment="center"/>
 
             <ImageView
@@ -39,8 +39,6 @@
                 app:srcCompat="@drawable/icono_app" />
         </LinearLayout>
 
-
-
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -49,6 +47,7 @@
             <EditText
                 android:id="@+id/txtCorreo"
                 android:layout_width="match_parent"
+                android:textColor="@color/color_botones"
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"
                 android:background="@color/white"
@@ -66,6 +65,7 @@
                 android:id="@+id/txtPassword"
                 android:background="@color/white"
                 android:layout_width="match_parent"
+                android:textColor="@color/color_botones"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
                 android:hint="@string/txtPassword"/>
@@ -81,6 +81,7 @@
                 android:id="@+id/txtNombre"
                 android:background="@color/white"
                 android:layout_width="match_parent"
+                android:textColor="@color/color_botones"
                 android:layout_height="wrap_content"
                 android:hint="@string/txtNombre"/>
         </com.google.android.material.textfield.TextInputLayout>
@@ -89,11 +90,12 @@
             android:id="@+id/txtFecha"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="15dp"
             android:layout_marginBottom="@dimen/mg_tb"
             android:textAlignment="center"
-            android:textSize="16dp"
+            android:textSize="18dp"
             android:textStyle="bold"
+            android:textColor="@color/white"
             android:text="@string/txtFecha"
             />
 

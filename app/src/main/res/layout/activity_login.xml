@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
+    android:background="@color/color_fondo"
     tools:context=".Login">
 
     <LinearLayout
@@ -20,6 +21,7 @@
             android:layout_marginBottom="20dp">
 
             <TextView
+                android:textColor="@color/color_botones"
                 android:id="@+id/txtTituloLogin"
                 android:layout_width="match_parent"
                 android:text="@string/txtTitleLogin"
@@ -31,8 +33,9 @@
 
             <ImageView
                 android:id="@+id/imageView3"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_marginBottom="10dp"
                 app:srcCompat="@drawable/login" />
         </LinearLayout>
 
@@ -44,6 +47,7 @@
 
             <EditText
                 android:layout_width="match_parent"
+                android:textColor="@color/color_botones"
                 android:background="@color/white"
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"
@@ -60,6 +64,7 @@
 
             <EditText
                 android:layout_width="match_parent"
+                android:textColor="@color/color_botones"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
                 android:background="@color/white"
@@ -72,7 +77,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/txtBtnLogin"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="20dp"
             android:textSize="18dp"
             android:background="@drawable/boton_personalizado"
             app:backgroundTint ="@null"/>
